@@ -6,10 +6,10 @@ namespace Premium_Data.Controllers
 {
     public class ApiLoginController : ApiController
     {
-        Cyclus_DataEntities db = new Cyclus_DataEntities();
+        private Cyclus_DataEntities db = new Cyclus_DataEntities();
 
         [HttpPost]
-        [Route("api/login")]
+        [Route("api/login")]  // Attribute routing werkt omdat we config.MapHttpAttributeRoutes() aanzetten
         public IHttpActionResult Login([FromBody] LoginRequest login)
         {
             if (login == null || string.IsNullOrEmpty(login.Username) || string.IsNullOrEmpty(login.Password))
@@ -25,7 +25,7 @@ namespace Premium_Data.Controllers
                 return Unauthorized();
             }
 
-            if (user.INLOG_ACTIEF == false)
+            if (!user.INLOG_ACTIEF)
             {
                 return Content(System.Net.HttpStatusCode.Forbidden, "Gebruiker is niet actief.");
             }
