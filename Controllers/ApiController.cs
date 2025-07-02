@@ -44,4 +44,13 @@ namespace Premium_Data.Controllers
         public string Username { get; set; }
         public string Password { get; set; }
     }
+       public class HelloController : ApiController
+    {
+        [HttpGet]
+        [Route("api/hello")]
+        public IHttpActionResult GetHello()
+        {
+            return Ok("Hello");
+        }
+    }
 }

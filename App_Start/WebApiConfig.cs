@@ -6,10 +6,9 @@ namespace Premium_Data
     {
         public static void Register(HttpConfiguration config)
         {
-            // Attribute routing aanzetten zodat [Route("api/login")] werkt
             config.MapHttpAttributeRoutes();
 
-            // Default API route (optioneel, maar handig als fallback)
+            // Optioneel: default route
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
