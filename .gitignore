@@ -1,0 +1,27 @@
+# Visual Studio
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build Results
+[Bb]in/
+[Oo]bj/
+
+# SQL Server files
+*.mdf
+*.ldf
+
+# Entity Framework
+*.cache
+
+# IIS Express
+/.vs/
+
+# Other files
+*.log
+*.tlog
+*.vspscc
